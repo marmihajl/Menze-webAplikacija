@@ -1,0 +1,4 @@
+AuthName "Korisnici sustava"
+AuthUserFile http://barka.foi.hr/WebDiP/2015_projekti/WebDiP2015x054/privatno/korisnici.txt
+AuthType Basic
+Require valid-user

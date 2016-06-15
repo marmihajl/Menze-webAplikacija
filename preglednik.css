@@ -1,0 +1,46 @@
+body{
+    background-color: #4169E1;
+}
+header{
+    background-color: #000080;
+    height: 175px;
+    width: 101.3%;
+    position: relative;
+    left: -8.5px;
+    top: -18px;
+}
+.naslov{
+    position: absolute;
+    text-align: center;
+    top: 65px;
+    font-size: 250%;
+    color: white;
+    left: 50%;
+    font-weight: bold;
+}
+nav{
+    background-color: #000080;
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    left: -8px;
+    top: 165px;
+    color: white;
+}
+div.sadrzaj{
+    position: absolute;
+    color: #000080;
+    left: 151px;
+    top: 176px;
+}
+greske{
+    color: red;
+}
+div.zaglavlje{
+    text-align: right;
+    color: black;
+    width: 1000px;
+}
+a:visited{
+    color: white;
+}

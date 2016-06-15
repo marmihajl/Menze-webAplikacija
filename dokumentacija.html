@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MENZE-aplikacija</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="preglednik.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            function povecaj() {
+                document.getElementById("era").width = 1024;
+                document.getElementById("era").height = 768;
+            }
+            function povecaj_dijagram() {
+                document.getElementById("dijagram").width = 1024;
+                document.getElementById("dijagram").height = 768;
+            }
+        </script>
+        <header>
+            <div class="naslov">MENZE</div>
+        </header>
+        <div class="sadrzaj">
+            <section>
+                Projekti zadatak koji sam imao zove se Menze. Zadatak
+                podrazumjeva kompletnu aplikaciju za korisnike menzi i zaposlenike.
+                Kroz aplikaciju moguć je pregled menija i rezervacija menija za
+                obične korisnike. Za moderatore menzi moguće kreiranje menija 
+                u menzi u kojoj su moderatori, pregle statistike korištenja, 
+                prihvačanje/odbijanje rezervacije od strane drugih korisnika i slično.
+                Administrator ima potpunu mogučnost administriranja cijelim sustavom,
+                uz to da ima i sve uobičajene funkcionalnosti koje imaju ostali
+                korisnici koji nisu administratori.
+            </section><br>
+            <section>
+                Projektno rješenje podržava i implementira sve zadane funkcionalnosti.
+                Od same prijave/odjave korisnika, korištenje funkcionalnosti
+                vezane za menze i za menije do mogućeg dodavanja pojedinih slika
+                nekog menija ili slično.
+            </section><br>
+            <section>
+                ERA MODEL<br>
+                
+                <img src="slika-sustava-razvoj/era_projekt.png" id="era" alt="ERA model" width="100" height="100" onclick="povecaj()"><br>
+                ERA model prikazuje sve tablice u bazi podataka koje su potrebne za realizaciju susatava.<br>
+                <br>NAVIGACIJSKI DIJAGRAM<br>
+                <img src="slika-sustava-razvoj/diagram.png" id="dijagram" alt="dijagram" width="100" height="100" onclick="povecaj_dijagram()"><br>
+                Navigacijski dijagram prikazuje na koja navigacijska svojstva može ići koji korisnik. Treba napomenuti da
+                administrator još ima mogućnost CRUD kontrola za svaku tablicu.<br>
+                <a style="font-style: italic;">aktivacija.php</a><br>
+                Skripta omogućuje realizaciju aktivacije registriranog korisnika.
+                Provjerava da li je prošlo 12 sati od slanaja aktivacijskog linka korisniku,
+                i reagira na odgovarajući način.<br>
+                <a style="font-style: italic;">baza_class.php</a><br>
+                Klasa koja omogučuje rad s bazom podataka. Spajanje na bazu podataka,
+                izvršavanje upita nad bazom podataka i odspajanje s baze podataka.<br>
+                <a style="font-style: italic;">detalji_meni.php</a><br>
+                Omogučuje promjenu menija, odnosno promjenu količine određenog menija,
+                u slučajevima kada je ta promjena dozvoljena.<br>
+                <a style="font-style: italic;">dnevnik.php</a><br>
+                Klasa koja omogučuje rad s dnevnikom. Upis radnji koje korisnik
+                izvodi u dnevnik, a prije toga priprema za upis u bazu podataka.<br>
+                <a style="font-style: italic;">dodaj_aktivacijski_kod.php</a><br>
+                Kod administratora omogućuje dodavanje aktivacijskog koda za nekog korisnika
+                u bazu podataka.<br>
+                <a style="font-style: italic;">dodaj_crnu_listu.php</a><br>
+                Kod administratora omogućuje dodavanje korisnika na crnu listu
+                neke menze.<br>
+                <a style="font-style: italic;">dodaj_korisnika.php</a><br>
+                Kod administratora omogućuje dodavanje korisnika u bazu podataka.<br>
+                <a style="font-style: italic;">dodaj_lajk.php</a><br>
+                Kod administratora omogućuje dodavanje lajka nekog korisnika
+                određenom meniju i zapis tog lajka u bazu podataka.<br>
+                <a style="font-style: italic;">dodaj_lajk_menze.php</a><br>
+                Kod administratora omogućuje dodavanje lajka nekog korisnika
+                određenoj menzi i upis tog zapisa u bazu podataka.<br>
+                <a style="font-style: italic;">dodaj_menzu.php</a><br>
+                Kod administratora omogućuje dodavanje menze i detalja menze
+                (adresa) u bazu podataka.<br>
+                <a style="font-style: italic;">dodaj_moderatora.php</a><br>
+                Kod administratora omogućuje dodavanje moderatora(korisnika)
+                određenoj menzi.<br>
+                <a style="font-style: italic;">dodaj_pomak.php</a><br>
+                Kod administratora omogućuje promjenu vrijednosti u tablici pomak.
+                Na taj način promjenu vremena aplikacije.<br>
+                <a style="font-style: italic;">dodaj_sliku.php</a><br>
+                Kod administratora omogućuje dodavanje slike u bazu podataka.<br>
+                <a style="font-style: italic;">dodaj_tip_korisnika.php</a><br>
+                Kod administratora omogućuje dodavanje tipa korisnika u bazu podataka.<br>
+                <a style="font-style: italic;">dodavanje_meni.php</a><br>
+                Skripta omogućuje da moderator ili administrator dodaju određeni meni
+                nekoj menzi. Odrede za koji dan vrijedi taj meni i kolika je količina
+                menija.<br>
+                <a style="font-style: italic;">galerija.php</a><br>
+                Skripta omogućuje pregled slika koje korisnik ima dodane i pretraživanje
+                slika prema tagovima. Isto tako omogučuje formu za dodavanje novih slika.<br>
+                <a style="font-style: italic;">index.php</a><br>
+                Naslovna stranica sustava. Omogućuje pregled rezervacija i status svih rezervacija.
+                Isto tako omogućuje pregled crnih lista(prikazuje da li je korisnik na
+                crnoj listi neke menze i ako je do kad).<br>
+                <a style="font-style: italic;">ispis_slika.js</a><br>
+                Ajax skripta koja omogučuje prikaz slika s obzirom na tagove,
+                odnosno mijenjaju se slike s obzirom kako se mjenja tag koji korinsik unosi.<br>
+                <a style="font-style: italic;">menze.php</a><br>
+                Omogučuje pregled menija za odabranu menzu od strane korisnika.
+                Administratoru i moderatoru omogućuje pristup nekim drugim stranicama 
+                kao što su dodavanje menija, uređivanje menija i pregled rezervacija.<br>
+                <a style="font-style: italic;">odjava.php</a><br>
+                Odjavljuje korisnika sa sustava, odnosno briše korisničku sesiju.<br>
+                <a style="font-style: italic;">popis_lajkova.php</a><br>
+                XML datoteka koju korisni AJAX kako bi prikazao popis broja lajkova i dislajkova
+                za pojedini meni.<br>
+                <a style="font-style: italic;">popis_meni.php</a><br>
+                XML datoteka koju korisni AJAX kako bi prikazao sve menije na stranici
+                menze.php s obzirom na promjenu menze. Ova datoteka sadrži podatke o svim 
+                menijima.<br>
+                <a style="font-style: italic;">popis_rezervacija.php</a><br>
+                XML datoteka koja sadrži popis svih rezervacija koje se nalaze u
+                bazi podataka.<br>
+                <a style="font-style: italic;">popis_slika.php</a><br>
+                XML datoteka koja sadrži popis svih slika koje se nalaze u
+                bazi podataka.<br>
+                <a style="font-style: italic;">posjecenost.php</a><br>
+                Skripta prikazuje posjećenost korisnika određenoj stranici.
+                Taj popis se može filtrirati prema korisniku.<br>
+                <a style="font-style: italic;">postavke.php</a><br>
+                Skripta omogućuje pregled svih tablica iz baze podataka, ažuriranje istih
+                i brisanje entiteta iz tablica. Omogučuje i pomak vremena sustava.<br>
+                <a style="font-style: italic;">pregled_rezervacija.php</a><br>
+                Administratoru i moderatoru omogućuje pregled rezervacija od strane drugih korisnika.
+                Ova skripta omogućuje jedino i samo pregled(tko i kada) ne i upravljanje rezervacijama.<br>
+                <a style="font-style: italic;">preglednik.css</a><br>
+                CSS datoteka koja određuje izgled stranice. Tijela stranice, zaglavalja i navigacije.<br>
+                <a style="font-style: italic;">prijava.php</a><br>
+                Skripta za prijavu provjerava da li je korisnik registriran. Ako je registriran,
+                da li aktivan, da li mu je račun otključan, da li je unjeo dobru lozinku.
+                U slučaju da je sve u redu kreira sesiju i preusmjerava korisnika na naslovnicu.<br>
+                <a style="font-style: italic;">promjena_lozinke.php</a><br>
+                Link na skriptu se šalje korisniku kada aktivira funkciju zaboravljena lozinka.
+                Skripta provjerava jel unesena lozinka u ispravnom formatu i u slučaju da je
+                mijenja lozinku u bazi podataka.<br>
+                <a style="font-style: italic;">provjera_registracije.js</a><br>
+                Javascript dokument koji sadrži odeđene funkcije za provjeru validnosti unesenih
+                podataka krisnika prilikom registracije. Funkcije provjeravaju da li je mail unesen
+                u korektnom obliku, da li je unesen kontakt, da li lozinka ima 8 simbola, da li su lozinke jednake.<br>
+                <a style="font-style: italic;">registracija.php</a><br>
+                Skripta omogućuje korisniku da unese svoje podatke i na taj način se registrira.
+                U slučaju da je korisnik unjeo neispravne podatke obavještava ga o pogrešci.
+                Kada korisnik unese ispravne podatke skripta ga upisuje u bazu podataka i 
+                šalje korisniku na uneseni mail podatke za registraciju.<br>
+                <a style="font-style: italic;">rezervacija.php</a><br>
+                Skripta omogućuje korisniku da rezervira meni u željenoj količini i 
+                da odredi u koje vrijeme želi rezervaciju.<br>
+                <a style="font-style: italic;">sesija.class.php</a><br>
+                Klasa koja omogućuje rad sa sesijom. Funkcija koja kreira sesiju i
+                sesiju sprema u obliku polja u superglobalnu varijablu $_SESSION.<br>
+                <a style="font-style: italic;">spremi_pomak.php</a><br>
+                Skripta dohvaća pomak sa stranice http://barka.foi.hr/WebDiP/pomak_vremena/vrijeme.html
+                i sprema ga u tablicu u bazi podataka.<br>
+                <a style="font-style: italic;">statistika.php</a><br>
+                Skripta omogućuje prikaz statistike lajkova menzama i
+                lajkova za pojedini meni pojedine menze. Uz to prikazani su
+                datumi kada je bilo koji meni.<br>
+                <a style="font-style: italic;">trazena_slika.js</a><br>
+                Skripta prikazuje slike filtirirane prema tagu unesenom od strane korisnika.<br>
+                <a style="font-style: italic;">upload.php</a><br>
+                Skripta uploada sliku na server u direktorij koji ima isto ime kao 
+                što je korisničko ime korisnika koji uploada sliku. Ako korinsik nema još
+                kreiran svoj direktorij onda skripta prvo kreira direktorij.<br>
+                <a style="font-style: italic;">uredivanje_menija.php</a><br>
+                Omogućuje uređivanje menija odnosno promjenu vrijednosti stanja 
+                menija(raspoložive količine menija).<br>
+                <a style="font-style: italic;">vrijeme.php</a><br>
+                Klasa za rad s vremenom. Računa vrijeme tako da mu pridoda vrijednost
+                pomaka iz baze podataka te omogućuje funkcije koje vraćaju vrijeme u različitim
+                oblicima.<br>
+                <a style="font-style: italic;">zahtjev_lozinke.php</a><br>
+                Šalje formular za promjenu lozinke korisnika na mail koji je unesen na 
+                skripti.<br><br>
+                KORIŠTENE TEHNOLOGIJE I ALATI<br>
+                <a style="font-style: italic;">PHP</a><br>
+                Jezik za rad na serverskoj strani. Vrlo koristan jezik kojim je
+                bilo moguće ostvariti sve zadane funkcionalnosti u ovom projektu.
+                Nije kompliciran jezik i vrlo lako se koristi.<br>
+                <a style="font-style: italic;">AJAX</a><br>
+                Jezik za dinamički promjenu sadržaja stranice.<br>
+                <a style="font-style: italic;">Javascript</a><br>
+                Skripti jezik koji se izvršava na korisničkoj strani. Koristio sam ga
+                za određene provjere prilikom registracije kako bih na taj način rasteretio
+                promet na serverskoj strani<br>
+                <a style="font-style: italic;">HTML</a><br>
+                Jezik za rad kreiranje elemenata web stranice.<br>
+                <a style="font-style: italic;">CSS</a><br>
+                Jezik za grafičko oblikovanje HTML objekata.<br>
+                <a style="font-style: italic;">NetBeans</a><br>
+                Razvojno okruženje koje omogučava rad sa svim navedenim tehnologijama
+                (programskim jezicima). Vrlo jednostavno razvojno okruženje koje ne nudi
+                veliki broj dodatnih mogućnosti, ali je jednostavno i zbog toga 
+                učinkovito i korisno.<br>
+                <a style="font-style: italic;">phpMyAdmin</a><br>
+                Okruženje unutar kojeg se nalazi baza podataka u MySQL-u.
+                Isto tako jednostavni alat za rad s bazom podataka koji omogućuje
+                sve naredbe nad bazom podataka koje su moguće kroz komandno sučelje.<br>
+                <a style="font-style: italic;">MySQLWorkBench</a><br>
+                Alat za dizajniranje baze podataka. Jendostavno kreiranje tablica 
+                u bazi podataka i jednostavno povezivanje istih.<br><br>
+                CAPTCHA-za provjeru da korisnik koji se registrira nije robot. Koristio sam
+                reCAPCHU od Google-a.
+            </section>
+        </div>
+    </body>
+</html>
